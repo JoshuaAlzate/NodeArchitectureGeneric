@@ -16,8 +16,7 @@
       "@types/supertest": "^2.0.7",
       "@types/swagger-ui-express": "^3.0.1",
       "@types/mysql2": "github:types/mysql2",
-      "ts-node": "3.3.0",
-      "typescript": "3.3.3333"
+      "ts-node": "3.3.0"
    },
    "dependencies": {
       "bcryptjs": "^2.4.3",
