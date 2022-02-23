@@ -20,14 +20,15 @@ type Route = {
 
 export const applyRoutes = (routes: Route[], router: Router) => {
     routes.forEach(route => {
-        (router as any)[route.method](route.path, (req: Request, res: Response, next: Function) => {
-            const result = (new (route.controller as any))[route.action](req, res, next);
-            if (result instanceof Promise) {
-                result.then(result => result !== null && result !== undefined ? res.send(result) : undefined);
+        
+        (router as any)[route.method](`/${route.path}`, (req: Request, res: Response, next: Function) => {
+                const result = (new (route.controller as any))[route.action](req, res, next);
+                if (result instanceof Promise) {
+                    result.then(result => result !== null && result !== undefined ? res.send(result) : undefined);
 
-            } else if (result !== null && result !== undefined) {
-                res.json(result);
-            }
-        });
+                } else if (result !== null && result !== undefined) {
+                    res.json(result);
+                }
+            });
     });
 };
