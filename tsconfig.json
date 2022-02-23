@@ -1,10 +1,14 @@
 {
    "compilerOptions": {
+      "baseUrl": "src/",
       "lib": [
          "es5",
          "es6",
          "dom", "es2017"
       ],
+      "paths": {
+         "@types/*": ["types/*"]
+      },
       "target": "es6",
       "module": "commonjs",
       "moduleResolution": "node",
